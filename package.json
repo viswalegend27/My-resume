@@ -1,0 +1,14 @@
+{
+  "name": "viswa-resume",
+  "version": "1.0.0",
+  "description": "Viswa V Resume Website",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve .",
+    "build": "echo 'No build required'"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "serve": "^14.0.0"
+  }
+}
