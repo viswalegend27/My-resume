@@ -5,7 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Viswa V - Web Developer</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #10b981;
+            --accent: #f59e0b;
+            --dark: #1f2937;
+            --light: #f8fafc;
+            --text-primary: #1f2937;
+            --text-secondary: #4b5563;
+            --text-light: #6b7280;
+            --glass: rgba(255, 255, 255, 0.95);
+            --glass-border: rgba(255, 255, 255, 0.2);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -13,22 +28,25 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 50%, #cbd5e1 100%);
             min-height: 100vh;
             padding: 20px;
+            font-weight: 400;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            background: white;
+            background: rgba(255, 255, 255, 0.98);
             border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             animation: slideUp 0.8s ease-out;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         @keyframes slideUp {
@@ -43,7 +61,7 @@
         }
 
         .header {
-            background: linear-gradient(135deg, #2c3e50 0%, #4a90e2 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: white;
             padding: 60px 40px;
             text-align: center;
@@ -80,19 +98,24 @@
         }
 
         .header h1 {
+            font-family: 'Poppins', sans-serif;
             font-size: 3.5rem;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
             position: relative;
             z-index: 1;
+            font-weight: 700;
+            letter-spacing: -0.02em;
         }
 
         .header h2 {
+            font-family: 'Inter', sans-serif;
             font-size: 1.5rem;
-            font-weight: 300;
-            opacity: 0.9;
+            font-weight: 400;
+            opacity: 0.95;
             position: relative;
             z-index: 1;
+            letter-spacing: 0.01em;
         }
 
         .contact-info {
@@ -110,6 +133,18 @@
             align-items: center;
             gap: 8px;
             font-size: 1rem;
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 12px 20px;
+            border-radius: 25px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
         }
 
         .main-content {
@@ -123,9 +158,9 @@
         }
 
         .right-column {
-            background: #f8f9fa;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
             padding: 40px 30px;
-            border-left: 1px solid #e9ecef;
+            border-left: 1px solid #e2e8f0;
         }
 
         .section {
@@ -133,11 +168,14 @@
         }
 
         .section h3 {
+            font-family: 'Poppins', sans-serif;
             font-size: 2rem;
-            color: #2c3e50;
+            color: var(--text-primary);
             margin-bottom: 25px;
             position: relative;
             padding-bottom: 10px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
         }
 
         .section h3::after {
@@ -147,51 +185,57 @@
             left: 0;
             width: 60px;
             height: 3px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             border-radius: 2px;
         }
 
         .about-text {
             font-size: 1.1rem;
             line-height: 1.8;
-            color: #555;
+            color: var(--text-secondary);
             text-align: justify;
+            font-weight: 400;
         }
 
         .experience-item, .education-item, .project-item {
-            background: white;
+            background: rgba(255, 255, 255, 0.9);
             padding: 25px;
             border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
             margin-bottom: 20px;
-            border-left: 4px solid #4a90e2;
+            border-left: 4px solid var(--primary);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .experience-item:hover, .education-item:hover, .project-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
         }
 
         .job-title, .degree-title, .project-title {
-            background: #2c3e50;
+            background: var(--primary);
             color: white;
             padding: 8px 15px;
             border-radius: 6px;
-            font-weight: bold;
+            font-weight: 600;
             margin-bottom: 10px;
             display: inline-block;
+            font-size: 1rem;
+            letter-spacing: 0.01em;
         }
 
         .job-period, .education-period {
-            color: #666;
-            font-weight: bold;
+            color: var(--text-light);
+            font-weight: 500;
             margin-bottom: 15px;
         }
 
         .job-description, .education-description, .project-description {
-            color: #555;
-            line-height: 1.6;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-weight: 400;
         }
 
         .right-section {
@@ -199,11 +243,13 @@
         }
 
         .right-section h4 {
+            font-family: 'Poppins', sans-serif;
             font-size: 1.5rem;
-            color: #2c3e50;
+            color: var(--text-primary);
             margin-bottom: 20px;
             text-align: center;
             position: relative;
+            font-weight: 600;
         }
 
         .skills-list, .hobbies-list, .courses-list {
@@ -211,7 +257,7 @@
         }
 
         .skills-list li, .hobbies-list li {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
             padding: 10px 15px;
             margin-bottom: 8px;
@@ -219,6 +265,8 @@
             text-align: center;
             font-weight: 500;
             transition: transform 0.3s ease;
+            font-size: 0.95rem;
+            letter-spacing: 0.01em;
         }
 
         .skills-list li:hover, .hobbies-list li:hover {
@@ -226,23 +274,26 @@
         }
 
         .course-item {
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
             padding: 15px;
             border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
             margin-bottom: 15px;
-            border-left: 3px solid #4a90e2;
+            border-left: 3px solid var(--primary);
+            backdrop-filter: blur(5px);
         }
 
         .course-name {
-            font-weight: bold;
-            color: #2c3e50;
+            font-weight: 600;
+            color: var(--text-primary);
             margin-bottom: 5px;
+            font-size: 0.95rem;
         }
 
         .course-date {
-            color: #666;
+            color: var(--text-light);
             font-size: 0.9rem;
+            font-weight: 500;
         }
 
         .links {
@@ -251,7 +302,7 @@
 
         .link-item {
             display: inline-block;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
             padding: 12px 20px;
             border-radius: 25px;
@@ -259,11 +310,13 @@
             margin: 5px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.01em;
         }
 
         .link-item:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
             color: white;
             text-decoration: none;
         }
@@ -297,7 +350,7 @@
 
             .right-column {
                 border-left: none;
-                border-top: 1px solid #e9ecef;
+                border-top: 1px solid #e2e8f0;
             }
         }
 
@@ -422,7 +475,7 @@
                 <div class="right-section">
                     <h4>Links</h4>
                     <div class="links">
-                        <a href="https://www.linkedin.com/in/viswa-v-696R12275" class="link-item" target="_blank">
+                        <a href="https://www.linkedin.com/in/viswa-v-6968a2275/" class="link-item" target="_blank">
                             <i class="fab fa-linkedin"></i> LinkedIn
                         </a>
                         <a href="https://github.com/viswalegend27" class="link-item" target="_blank">
