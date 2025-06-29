@@ -429,3 +429,6 @@ body {
   cursor: pointer;
 }
 
+.title-logo{
+  border-radius: 5px;
+}
