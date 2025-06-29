@@ -32,3 +32,19 @@
         };
         
         setTimeout(typeWriter, 1000);
+
+        const links = document.querySelectorAll('.project-link');
+
+        links.forEach(link => {
+            link.addEventListener('mousemove', (e) => {
+                const rect = link.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                link.style.setProperty('--x', `${x}%`);
+                link.classList.add('hover-gradient');
+            });
+
+            link.addEventListener('mouseleave', () => {
+                link.classList.remove('hover-gradient');
+                link.style.removeProperty('--x');
+            });
+        });
